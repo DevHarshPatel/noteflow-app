@@ -12,6 +12,7 @@ interface TextEffectProps {
   onAnimationComplete?: () => void;
 }
 
+// Extend Variants type with transition typing
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -76,7 +77,7 @@ export function TextEffect({
               ...containerVariants.visible,
               transition: {
                 ...containerVariants.visible.transition,
-                delayChildren: delay,
+                delayChildren: delay, // Ensure delay is properly set
               },
             },
           }}
@@ -98,4 +99,4 @@ export function TextEffect({
       )}
     </AnimatePresence>
   );
-} 
+}
