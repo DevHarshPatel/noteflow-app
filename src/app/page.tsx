@@ -7,6 +7,8 @@ import { Glow } from "@/components/ui/glow";
 import { TestimonialsSection } from "@/components/ui/testimonials-section";
 import { Footer } from "@/components/ui/footer";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const testimonials = [
   {
@@ -105,7 +107,7 @@ export default function Home() {
                     "transition-all duration-300",
                   )}
                 >
-                  <a href="/signup">Try it free</a>
+                  <a href="/notes">Try it free</a>
                 </Button>
 
                 <Button
