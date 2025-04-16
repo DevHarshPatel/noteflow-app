@@ -12,7 +12,6 @@ interface TextEffectProps {
   onAnimationComplete?: () => void;
 }
 
-// Extend Variants type with transition typing
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -72,14 +71,15 @@ export function TextEffect({
           animate="visible"
           exit="exit"
           variants={{
-            ...containerVariants,
+            hidden: containerVariants.hidden,
             visible: {
-              ...containerVariants.visible,
+              opacity: 1,
               transition: {
-                ...containerVariants.visible.transition,
-                delayChildren: delay, // Ensure delay is properly set
+                staggerChildren: 0.2,
+                delayChildren: delay,
               },
             },
+            exit: containerVariants.exit,
           }}
           className={cn('space-y-1', className)}
           onAnimationComplete={onAnimationComplete}
